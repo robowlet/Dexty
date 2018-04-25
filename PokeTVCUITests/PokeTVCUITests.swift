@@ -28,9 +28,12 @@ class PokeTVCUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTappingCells() {
+        let app = XCUIApplication()
+        
+        app.tables.staticTexts["1 - Bulbasaur"].tap()
+        
     }
+
     
 }
