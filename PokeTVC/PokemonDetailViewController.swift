@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVFoundation  // delete ----------------------
+import AVFoundation  
 
 class PokemonDetailViewController: UIViewController {
     
@@ -16,9 +16,11 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokeType: UILabel!
     @IBOutlet weak var pokeGen: UILabel!
     
-    let soundFileNames = ["1","2"] // Delete
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        configureView()
+    }
     
-    var audioPlayers = [AVAudioPlayer]() // Delete -------------------------
+    var audioPlayers = [AVAudioPlayer]()
     var detailPokemon: Pokemon?
     
     func configureView() {
@@ -31,7 +33,7 @@ class PokemonDetailViewController: UIViewController {
                 title = "# " + String(detailPokemon.number)
                 
                 // Detail - Gen Label
-                pokeGen.text = detailPokemon.generation
+                //pokeGen.text = detailPokemon.generation
        
                 // Detail - Type Label
                 if let type2 = detailPokemon.type2 {
@@ -40,27 +42,20 @@ class PokemonDetailViewController: UIViewController {
                     pokeType.text = "Type: \(detailPokemon.type)"
                 }
                 
-                for sound in soundFileNames {  //Delete --------------------
-                    
-                    do {
-                        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: sound, ofType: "wav")!)
-                        let audioPlayer = try AVAudioPlayer(contentsOf: url as URL)
-                        audioPlayer.play()
-                        
-                        audioPlayers.append(audioPlayer)
-                    }
-                    catch {
-                        audioPlayers.append(AVAudioPlayer())
-                    }
-                    
-                    
-                    
-                }  //Delete ---------------------------------------------
+                
+                // Pokemon Sounds
+                let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "\(detailPokemon.number)", ofType: "wav")!)
+                guard let audioPlayer = try? AVAudioPlayer(contentsOf: url as URL) else {
+                    return
+                }
+                audioPlayers.append(audioPlayer)
+                audioPlayer.play()
                 
             }
         }
     }
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

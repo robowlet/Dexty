@@ -15,11 +15,14 @@ class PokeTableViewController: UITableViewController {
     var pokemons = [Pokemon]()
     var filteredPokemons = [Pokemon]()
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     
     // MARK: View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Customize
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
         // Setup the Search Controller
         
@@ -35,9 +38,9 @@ class PokeTableViewController: UITableViewController {
         definesPresentationContext = true
       
         
-        searchController.searchBar.setImage(UIImage(named: "pokeball2"), for: UISearchBarIcon.search, state: .normal)
+        searchController.searchBar.setImage(UIImage(named: "pokeball-1"), for: UISearchBarIcon.search, state: .normal)
 
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search Pokémon", attributes: [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)])
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search Pokémon", attributes: [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
 
         
         // Setup the Scope Bar
@@ -70,20 +73,20 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Pidgeotto", number: 17, image: UIImage(named: "17"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Pidgeot", number: 18, image: UIImage(named: "18"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Rattata", number: 19, image: UIImage(named: "19"), generation: "Gen 1", type: .Normal, type2: nil),
-            Pokemon(name: "Rattata (Alolan)", number: 19, image: UIImage(named: "019_1"), generation: "Gen 1", type: .Dark, type2: .Normal),
+//            Pokemon(name: "Rattata (Alolan)", number: 19, image: UIImage(named: "019_1"), generation: "Gen 1", type: .Dark, type2: .Normal),
             Pokemon(name: "Raticate", number: 20, image: UIImage(named: "20"), generation: "Gen 1", type: .Normal, type2: nil),
-            Pokemon(name: "Raticate (Alolan)", number: 20, image: UIImage(named: "020_1"), generation: "Gen 1", type: .Dark, type2: .Normal),
+//            Pokemon(name: "Raticate (Alolan)", number: 20, image: UIImage(named: "020_1"), generation: "Gen 1", type: .Dark, type2: .Normal),
             Pokemon(name: "Spearow", number: 21, image: UIImage(named: "21"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Fearow", number: 22, image: UIImage(named: "22"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Ekans", number: 23, image: UIImage(named: "23"), generation: "Gen 1", type: .Poison, type2: nil),
             Pokemon(name: "Arbok", number: 24, image: UIImage(named: "24"), generation: "Gen 1", type: .Poison, type2: nil),
             Pokemon(name: "Pikachu", number: 25, image: UIImage(named: "25"), generation: "Gen 1", type: .Electric, type2: nil),
             Pokemon(name: "Raichu", number: 26, image: UIImage(named: "26"), generation: "Gen 1", type: .Electric, type2: nil),
-            Pokemon(name: "Raichu (Alolan)", number: 26, image: UIImage(named: "026_1"), generation: "Gen 1", type: .Electric, type2: .Psychic),
+//            Pokemon(name: "Raichu (Alolan)", number: 26, image: UIImage(named: "026_1"), generation: "Gen 1", type: .Electric, type2: .Psychic),
             Pokemon(name: "Sandshrew", number: 27, image: UIImage(named: "27"), generation: "Gen 1", type: .Ground, type2: nil),
-            Pokemon(name: "Sandshrew (Alolan)", number: 27, image: UIImage(named: "027_1"), generation: "Gen 1", type: .Ice, type2: .Steel),
+//            Pokemon(name: "Sandshrew (Alolan)", number: 27, image: UIImage(named: "027_1"), generation: "Gen 1", type: .Ice, type2: .Steel),
             Pokemon(name: "Sandslash", number: 28, image: UIImage(named: "28"), generation: "Gen 1", type: .Ground, type2: nil),
-            Pokemon(name: "Sandslash (Alolan)", number: 28, image: UIImage(named: "028_1"), generation: "Gen 1", type: .Ice, type2: .Steel),
+//            Pokemon(name: "Sandslash (Alolan)", number: 28, image: UIImage(named: "028_1"), generation: "Gen 1", type: .Ice, type2: .Steel),
             Pokemon(name: "Nidoran♀", number: 29, image: UIImage(named: "29"), generation: "Gen 1", type: .Poison, type2: nil),
             Pokemon(name: "Nidorina", number: 30, image: UIImage(named: "30"), generation: "Gen 1", type: .Poison, type2: nil),
             Pokemon(name: "Nidoqueen", number: 31, image: UIImage(named: "31"), generation: "Gen 1", type: .Poison, type2: .Ground),
@@ -93,9 +96,9 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Clefairy", number: 35, image: UIImage(named: "35"), generation: "Gen 1", type: .Fairy, type2: nil),
             Pokemon(name: "Clefable", number: 36, image: UIImage(named: "36"), generation: "Gen 1", type: .Fairy, type2: nil),
             Pokemon(name: "Vulpix", number: 37, image: UIImage(named: "37"), generation: "Gen 1", type: .Fire, type2: nil),
-            Pokemon(name: "Vulpix (Alolan)", number: 37, image: UIImage(named: "037_1"), generation: "Gen 1", type: .Ice, type2: nil),
+//            Pokemon(name: "Vulpix (Alolan)", number: 37, image: UIImage(named: "037_1"), generation: "Gen 1", type: .Ice, type2: nil),
             Pokemon(name: "Ninetales", number: 38, image: UIImage(named: "38"), generation: "Gen 1", type: .Fire, type2: nil),
-            Pokemon(name: "Ninetales (Alolan)", number: 38, image: UIImage(named: "038_1"), generation: "Gen 1", type: .Ice, type2: .Fairy),
+//            Pokemon(name: "Ninetales (Alolan)", number: 38, image: UIImage(named: "038_1"), generation: "Gen 1", type: .Ice, type2: .Fairy),
             Pokemon(name: "Jigglypuff", number: 39, image: UIImage(named: "39"), generation: "Gen 1", type: .Normal, type2: .Fairy),
             Pokemon(name: "Wigglytuff", number: 40, image: UIImage(named: "40"), generation: "Gen 1", type: .Normal, type2: .Fairy),
             Pokemon(name: "Zubat", number: 41, image: UIImage(named: "41"), generation: "Gen 1", type: .Flying, type2: .Poison),
@@ -108,13 +111,13 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Venonat", number: 48, image: UIImage(named: "48"), generation: "Gen 1", type: .Bug, type2: .Poison),
             Pokemon(name: "Venomoth", number: 49, image: UIImage(named: "49"), generation: "Gen 1", type: .Bug, type2: .Poison),
             Pokemon(name: "Diglett", number: 50, image: UIImage(named: "50"), generation: "Gen 1", type: .Ground, type2: nil),
-            Pokemon(name: "Diglett (Alolan)", number: 50, image: UIImage(named: "050_1"), generation: "Gen 1", type: .Ground, type2: .Steel),
+//            Pokemon(name: "Diglett (Alolan)", number: 50, image: UIImage(named: "050_1"), generation: "Gen 1", type: .Ground, type2: .Steel),
             Pokemon(name: "Dugtrio", number: 51, image: UIImage(named: "51"), generation: "Gen 1", type: .Ground, type2: nil),
-            Pokemon(name: "Dugtrio (Alolan)", number: 51, image: UIImage(named: "051_1"), generation: "Gen 1", type: .Ground, type2: .Steel),
+//            Pokemon(name: "Dugtrio (Alolan)", number: 51, image: UIImage(named: "051_1"), generation: "Gen 1", type: .Ground, type2: .Steel),
             Pokemon(name: "Meowth", number: 52, image: UIImage(named: "52"), generation: "Gen 1", type: .Normal, type2: nil),
-            Pokemon(name: "Meowth (Alolan)", number: 52, image: UIImage(named: "052_1"), generation: "Gen 1", type: .Dark, type2: nil),
+//            Pokemon(name: "Meowth (Alolan)", number: 52, image: UIImage(named: "052_1"), generation: "Gen 1", type: .Dark, type2: nil),
             Pokemon(name: "Persian", number: 53, image: UIImage(named: "53"), generation: "Gen 1", type: .Normal, type2: nil),
-            Pokemon(name: "Persian (Alolan)", number: 53, image: UIImage(named: "053_1"), generation: "Gen 1", type: .Dark, type2: nil),
+//            Pokemon(name: "Persian (Alolan)", number: 53, image: UIImage(named: "053_1"), generation: "Gen 1", type: .Dark, type2: nil),
             Pokemon(name: "Psyduck", number: 54, image: UIImage(named: "54"), generation: "Gen 1", type: .Water, type2: nil),
             Pokemon(name: "Golduck", number: 55, image: UIImage(named: "55"), generation: "Gen 1", type: .Water, type2: nil),
             Pokemon(name: "Mankey", number: 56, image: UIImage(named: "56"), generation: "Gen 1", type: .Fighting, type2: nil),
@@ -131,16 +134,16 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Machoke", number: 67, image: UIImage(named: "67"), generation: "Gen 1", type: .Fighting, type2: nil),
             Pokemon(name: "Machamp", number: 68, image: UIImage(named: "68"), generation: "Gen 1", type: .Fighting, type2: nil),
             Pokemon(name: "Bellsprout", number: 69, image: UIImage(named: "69"), generation: "Gen 1", type: .Grass, type2: .Poison),
-            Pokemon(name: "Weepingbell", number: 70, image: UIImage(named: "70"), generation: "Gen 1", type: .Grass, type2: .Poison),
-            Pokemon(name: "Victrybell", number: 71, image: UIImage(named: "71"), generation: "Gen 1", type: .Grass, type2: .Poison),
+            Pokemon(name: "Weepinbell", number: 70, image: UIImage(named: "70"), generation: "Gen 1", type: .Grass, type2: .Poison),
+            Pokemon(name: "Victeebell", number: 71, image: UIImage(named: "71"), generation: "Gen 1", type: .Grass, type2: .Poison),
             Pokemon(name: "Tentacool", number: 72, image: UIImage(named: "72"), generation: "Gen 1", type: .Water, type2: .Poison),
             Pokemon(name: "Tentacruel", number: 73, image: UIImage(named: "73"), generation: "Gen 1", type: .Water, type2: .Poison),
             Pokemon(name: "Geodude", number: 74, image: UIImage(named: "74"), generation: "Gen 1", type: .Rock, type2: .Ground),
-            Pokemon(name: "Geodude (Alolan)", number: 74, image: UIImage(named: "074_1"), generation: "Gen 1", type: .Rock, type2: .Electric),
+//            Pokemon(name: "Geodude (Alolan)", number: 74, image: UIImage(named: "074_1"), generation: "Gen 1", type: .Rock, type2: .Electric),
             Pokemon(name: "Graveler", number: 75, image: UIImage(named: "75"), generation: "Gen 1", type: .Rock, type2: .Ground),
-            Pokemon(name: "Graveler (Alolan)", number: 75, image: UIImage(named: "075_1"), generation: "Gen 1", type: .Rock, type2: .Electric),
+//            Pokemon(name: "Graveler (Alolan)", number: 75, image: UIImage(named: "075_1"), generation: "Gen 1", type: .Rock, type2: .Electric),
             Pokemon(name: "Golem", number: 76, image: UIImage(named: "76"), generation: "Gen 1", type: .Rock, type2: .Ground),
-            Pokemon(name: "Golem (Alolan)", number: 76, image: UIImage(named: "076_1"), generation: "Gen 1", type: .Rock, type2: .Ground),
+//            Pokemon(name: "Golem (Alolan)", number: 76, image: UIImage(named: "076_1"), generation: "Gen 1", type: .Rock, type2: .Ground),
             Pokemon(name: "Ponyta", number: 77, image: UIImage(named: "77"), generation: "Gen 1", type: .Fire, type2: nil),
             Pokemon(name: "Rapidash", number: 78, image: UIImage(named: "78"), generation: "Gen 1", type: .Fire, type2: nil),
             Pokemon(name: "Slowpoke", number: 79, image: UIImage(named: "79"), generation: "Gen 1", type: .Water, type2: .Psychic),
@@ -149,13 +152,13 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Megneton", number: 82, image: UIImage(named: "82"), generation: "Gen 1", type: .Electric, type2: .Steel),
             Pokemon(name: "Farfetch'd", number: 83, image: UIImage(named: "83"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Doduo", number: 84, image: UIImage(named: "84"), generation: "Gen 1", type: .Normal, type2: .Flying),
-            Pokemon(name: "Dotrio", number: 85, image: UIImage(named: "85"), generation: "Gen 1", type: .Normal, type2: .Flying),
+            Pokemon(name: "Dodrio", number: 85, image: UIImage(named: "85"), generation: "Gen 1", type: .Normal, type2: .Flying),
             Pokemon(name: "Seel", number: 86, image: UIImage(named: "86"), generation: "Gen 1", type: .Water, type2: nil),
             Pokemon(name: "Dewgong", number: 87, image: UIImage(named: "87"), generation: "Gen 1", type: .Water, type2: .Ice),
             Pokemon(name: "Grimer", number: 88, image: UIImage(named: "88"), generation: "Gen 1", type: .Poison, type2: nil),
-            Pokemon(name: "Grimer (Alolan)", number: 88, image: UIImage(named: "088_1"), generation: "Gen 1", type: .Poison, type2: .Dark),
+//            Pokemon(name: "Grimer (Alolan)", number: 88, image: UIImage(named: "088_1"), generation: "Gen 1", type: .Poison, type2: .Dark),
             Pokemon(name: "Muk", number: 89, image: UIImage(named: "89"), generation: "Gen 1", type: .Poison, type2: nil),
-            Pokemon(name: "Muk (Alolan)", number: 89, image: UIImage(named: "089_1"), generation: "Gen 1", type: .Poison, type2: .Dark),
+//            Pokemon(name: "Muk (Alolan)", number: 89, image: UIImage(named: "089_1"), generation: "Gen 1", type: .Poison, type2: .Dark),
             Pokemon(name: "Shellder", number: 90, image: UIImage(named: "90"), generation: "Gen 1", type: .Water, type2: nil),
             Pokemon(name: "Cloyster", number: 91, image: UIImage(named: "91"), generation: "Gen 1", type: .Water, type2: .Ice),
             Pokemon(name: "Gastly", number: 92, image: UIImage(named: "92"), generation: "Gen 1", type: .Ghost, type2: .Poison),
@@ -170,10 +173,10 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Electrode", number: 101, image: UIImage(named: "101"), generation: "Gen 1", type: .Electric, type2: nil),
             Pokemon(name: "Exeggcute", number: 102, image: UIImage(named: "102"), generation: "Gen 1", type: .Grass, type2: .Psychic),
             Pokemon(name: "Exeggutor", number: 103, image: UIImage(named: "103"), generation: "Gen 1", type: .Grass, type2: .Psychic),
-            Pokemon(name: "Exeggutor (Alolan)", number: 103, image: UIImage(named: "103_1"), generation: "Gen 1", type: .Grass, type2: .Dragon),
+//            Pokemon(name: "Exeggutor (Alolan)", number: 103, image: UIImage(named: "103_1"), generation: "Gen 1", type: .Grass, type2: .Dragon),
             Pokemon(name: "Cubone", number: 104, image: UIImage(named: "104"), generation: "Gen 1", type: .Ground, type2: nil),
             Pokemon(name: "Marowak", number: 105, image: UIImage(named: "105"), generation: "Gen 1", type: .Ground, type2: nil),
-            Pokemon(name: "Marowak (Alolan)", number: 105, image: UIImage(named: "105_1"), generation: "Gen 1", type: .Fire, type2: .Ghost),
+//            Pokemon(name: "Marowak (Alolan)", number: 105, image: UIImage(named: "105_1"), generation: "Gen 1", type: .Fire, type2: .Ghost),
             Pokemon(name: "Hitmonlee", number: 106, image: UIImage(named: "106"), generation: "Gen 1", type: .Fighting, type2: nil),
             Pokemon(name: "Hitmonchan", number: 107, image: UIImage(named: "107"), generation: "Gen 1", type: .Fighting, type2: nil),
             Pokemon(name: "Lickitung", number: 108, image: UIImage(named: "108"), generation: "Gen 1", type: .Normal, type2: nil),
@@ -217,7 +220,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Moltres", number: 146, image: UIImage(named: "146"), generation: "Gen 1", type: .Fire, type2: .Flying),
             Pokemon(name: "Dratini", number: 147, image: UIImage(named: "147"), generation: "Gen 1", type: .Dragon, type2: nil),
             Pokemon(name: "Dragonair", number: 148, image: UIImage(named: "148"), generation: "Gen 1", type: .Dragon, type2: nil),
-            Pokemon(name: "Draginite", number: 149, image: UIImage(named: "149"), generation: "Gen 1", type: .Dragon, type2: .Flying),
+            Pokemon(name: "Dragonite", number: 149, image: UIImage(named: "149"), generation: "Gen 1", type: .Dragon, type2: .Flying),
             Pokemon(name: "Mewtwo", number: 150, image: UIImage(named: "150"), generation: "Gen 1", type: .Psychic, type2: nil),
             Pokemon(name: "Mew", number: 151, image: UIImage(named: "151"), generation: "Gen 1", type: .Psychic, type2: nil),
 
@@ -228,12 +231,12 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Chikorita", number: 152, image: UIImage(named: "152"), generation: "Gen 2", type: .Grass, type2: nil),
             Pokemon(name: "Bayleef", number: 153, image: UIImage(named: "153"), generation: "Gen 2", type: .Grass, type2: nil),
             Pokemon(name: "Meganium", number: 154, image: UIImage(named: "154"), generation: "Gen 2", type: .Grass, type2: nil),
-            Pokemon(name: "Cyndiquil", number: 155, image: UIImage(named: "155"), generation: "Gen 2", type: .Grass, type2: nil),
+            Pokemon(name: "Cyndaquil", number: 155, image: UIImage(named: "155"), generation: "Gen 2", type: .Grass, type2: nil),
             Pokemon(name: "Quilava", number: 156, image: UIImage(named: "156"), generation: "Gen 2", type: .Fire, type2: nil),
             Pokemon(name: "Typhlosion", number: 157, image: UIImage(named: "157"), generation: "Gen 2", type: .Fire, type2: nil),
-            Pokemon(name: "Tododile", number: 158, image: UIImage(named: "158"), generation: "Gen 2", type: .Water, type2: nil),
+            Pokemon(name: "Totodile", number: 158, image: UIImage(named: "158"), generation: "Gen 2", type: .Water, type2: nil),
             Pokemon(name: "Croconaw", number: 159, image: UIImage(named: "159"), generation: "Gen 2", type: .Water, type2: nil),
-            Pokemon(name: "Feraligator", number: 160, image: UIImage(named: "160"), generation: "Gen 2", type: .Water, type2: nil),
+            Pokemon(name: "Feraligatr", number: 160, image: UIImage(named: "160"), generation: "Gen 2", type: .Water, type2: nil),
             Pokemon(name: "Sentret", number: 161, image: UIImage(named: "161"), generation: "Gen 2", type: .Normal, type2: nil),
             Pokemon(name: "Furret", number: 162, image: UIImage(named: "162"), generation: "Gen 2", type: .Normal, type2: nil),
             Pokemon(name: "Hoothoot", number: 163, image: UIImage(named: "163"), generation: "Gen 2", type: .Normal, type2: .Flying),
@@ -249,7 +252,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Cleffa", number: 173, image: UIImage(named: "173"), generation: "Gen 2", type: .Fairy, type2: nil),
             Pokemon(name: "Igglybuff", number: 174, image: UIImage(named: "174"), generation: "Gen 2", type: .Fairy, type2: .Flying),
             Pokemon(name: "Togepi", number: 175, image: UIImage(named: "175"), generation: "Gen 2", type: .Fairy, type2: nil),
-            Pokemon(name: "Togepi", number: 176, image: UIImage(named: "176"), generation: "Gen 2", type: .Fairy, type2: .Flying),
+            Pokemon(name: "Togetic", number: 176, image: UIImage(named: "176"), generation: "Gen 2", type: .Fairy, type2: .Flying),
             Pokemon(name: "Natu", number: 177, image: UIImage(named: "177"), generation: "Gen 2", type: .Psychic, type2: .Flying),
             Pokemon(name: "Xatu", number: 178, image: UIImage(named: "178"), generation: "Gen 2", type: .Psychic, type2: .Flying),
             Pokemon(name: "Mareep", number: 179, image: UIImage(named: "179"), generation: "Gen 2", type: .Electric, type2: nil),
@@ -258,7 +261,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Bellossom", number: 182, image: UIImage(named: "182"), generation: "Gen 2", type: .Grass, type2: nil),
             Pokemon(name: "Marill", number: 183, image: UIImage(named: "183"), generation: "Gen 2", type: .Water, type2: .Fairy),
             Pokemon(name: "Azumarill", number: 184, image: UIImage(named: "184"), generation: "Gen 2", type: .Water, type2: .Fairy),
-            Pokemon(name: "Suduwoodo", number: 185, image: UIImage(named: "185"), generation: "Gen 2", type: .Rock, type2: nil),
+            Pokemon(name: "Sudowoodo", number: 185, image: UIImage(named: "185"), generation: "Gen 2", type: .Rock, type2: nil),
             Pokemon(name: "Politoed", number: 186, image: UIImage(named: "186"), generation: "Gen 2", type: .Water, type2: nil),
             Pokemon(name: "Hoppip", number: 187, image: UIImage(named: "187"), generation: "Gen 2", type: .Grass, type2: .Flying),
             Pokemon(name: "Skiploom", number: 188, image: UIImage(named: "188"), generation: "Gen 2", type: .Grass, type2: .Flying),
@@ -284,7 +287,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Steelix", number: 208, image: UIImage(named: "208"), generation: "Gen 2", type: .Steel, type2: .Ground),
             Pokemon(name: "Snubbull", number: 209, image: UIImage(named: "209"), generation: "Gen 2", type: .Fairy, type2: nil),
             Pokemon(name: "Granbull", number: 210, image: UIImage(named: "210"), generation: "Gen 2", type: .Fairy, type2: nil),
-            Pokemon(name: "Quilfish", number: 211, image: UIImage(named: "211"), generation: "Gen 2", type: .Water, type2: .Poison),
+            Pokemon(name: "Qwilfish", number: 211, image: UIImage(named: "211"), generation: "Gen 2", type: .Water, type2: .Poison),
             Pokemon(name: "Scizor", number: 212, image: UIImage(named: "212"), generation: "Gen 2", type: .Bug, type2: .Steel),
             Pokemon(name: "Shuckle", number: 213, image: UIImage(named: "213"), generation: "Gen 2", type: .Bug, type2: .Rock),
             Pokemon(name: "Heracross", number: 214, image: UIImage(named: "214"), generation: "Gen 2", type: .Bug, type2: .Fighting),
@@ -330,7 +333,7 @@ class PokeTableViewController: UITableViewController {
             // MARK: Gen 3 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             
-            Pokemon(name: "Treeko", number: 252, image: UIImage(named: "252"), generation: "Gen 3", type: .Grass, type2: nil),
+            Pokemon(name: "Treecko", number: 252, image: UIImage(named: "252"), generation: "Gen 3", type: .Grass, type2: nil),
             Pokemon(name: "Grovyle", number: 253, image: UIImage(named: "253"), generation: "Gen 3", type: .Grass, type2: nil),
             Pokemon(name: "Sceptile", number: 254, image: UIImage(named: "254"), generation: "Gen 3", type: .Grass, type2: nil),
             Pokemon(name: "Torchic", number: 255, image: UIImage(named: "255"), generation: "Gen 3", type: .Fire, type2: nil),
@@ -392,7 +395,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Plusle", number: 311, image: UIImage(named: "311"), generation: "Gen 3", type: .Electric, type2: nil),
             Pokemon(name: "Minun", number: 312, image: UIImage(named: "312"), generation: "Gen 3", type: .Electric, type2: nil),
             Pokemon(name: "Volbeat", number: 313, image: UIImage(named: "313"), generation: "Gen 3", type: .Bug, type2: nil),
-            Pokemon(name: "Illuminise", number: 314, image: UIImage(named: "314"), generation: "Gen 3", type: .Bug, type2: nil),
+            Pokemon(name: "Illumise", number: 314, image: UIImage(named: "314"), generation: "Gen 3", type: .Bug, type2: nil),
             Pokemon(name: "Roselia", number: 315, image: UIImage(named: "315"), generation: "Gen 3", type: .Grass, type2: .Poison),
             Pokemon(name: "Gulpin", number: 316, image: UIImage(named: "316"), generation: "Gen 3", type: .Poison, type2: nil),
             Pokemon(name: "Swalot", number: 317, image: UIImage(named: "317"), generation: "Gen 3", type: .Poison, type2: nil),
@@ -430,10 +433,10 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Feebas", number: 349, image: UIImage(named: "349"), generation: "Gen 3", type: .Water, type2: nil),
             Pokemon(name: "Milotic", number: 350, image: UIImage(named: "350"), generation: "Gen 3", type: .Water, type2: nil),
             Pokemon(name: "Castform", number: 351, image: UIImage(named: "351"), generation: "Gen 3", type: .Normal, type2: nil),
-            Pokemon(name: "Castform (Sunny)", number: 351, image: UIImage(named: "351-sunny"), generation: "Gen 3", type: .Fire, type2: nil),
-            Pokemon(name: "Castform (Rainy)", number: 351, image: UIImage(named: "351-rainy"), generation: "Gen 3", type: .Water, type2: nil),
-            Pokemon(name: "Castform (Snowy)", number: 351, image: UIImage(named: "351-snowy"), generation: "Gen 3", type: .Ice, type2: nil),
-            Pokemon(name: "Kecloen", number: 352, image: UIImage(named: "352"), generation: "Gen 3", type: .Normal, type2: nil),
+//            Pokemon(name: "Castform (Sunny)", number: 351, image: UIImage(named: "351-sunny"), generation: "Gen 3", type: .Fire, type2: nil),
+//            Pokemon(name: "Castform (Rainy)", number: 351, image: UIImage(named: "351-rainy"), generation: "Gen 3", type: .Water, type2: nil),
+//            Pokemon(name: "Castform (Snowy)", number: 351, image: UIImage(named: "351-snowy"), generation: "Gen 3", type: .Ice, type2: nil),
+            Pokemon(name: "Kecleon", number: 352, image: UIImage(named: "352"), generation: "Gen 3", type: .Normal, type2: nil),
             Pokemon(name: "Shuppet", number: 353, image: UIImage(named: "353"), generation: "Gen 3", type: .Ghost, type2: nil),
             Pokemon(name: "Banette", number: 354, image: UIImage(named: "354"), generation: "Gen 3", type: .Ghost, type2: nil),
             Pokemon(name: "Duskull", number: 355, image: UIImage(named: "355"), generation: "Gen 3", type: .Ghost, type2: nil),
@@ -454,7 +457,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Luvdisc", number: 370, image: UIImage(named: "370"), generation: "Gen 3", type: .Water, type2: nil),
             Pokemon(name: "Bagon", number: 371, image: UIImage(named: "371"), generation: "Gen 3", type: .Dragon, type2: nil),
             Pokemon(name: "Shelgon", number: 372, image: UIImage(named: "372"), generation: "Gen 3", type: .Dragon, type2: nil),
-            Pokemon(name: "Salmence", number: 373, image: UIImage(named: "373"), generation: "Gen 3", type: .Dragon, type2: .Flying),
+            Pokemon(name: "Salamence", number: 373, image: UIImage(named: "373"), generation: "Gen 3", type: .Dragon, type2: .Flying),
             Pokemon(name: "Beldum", number: 374, image: UIImage(named: "374"), generation: "Gen 3", type: .Steel, type2: .Psychic),
             Pokemon(name: "Metang", number: 375, image: UIImage(named: "375"), generation: "Gen 3", type: .Steel, type2: .Psychic),
             Pokemon(name: "Metagross", number: 376, image: UIImage(named: "376"), generation: "Gen 3", type: .Steel, type2: .Psychic),
@@ -468,9 +471,9 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Rayquaza", number: 384, image: UIImage(named: "384"), generation: "Gen 3", type: .Dragon, type2: .Flying),
             Pokemon(name: "Jirachi", number: 385, image: UIImage(named: "385"), generation: "Gen 3", type: .Steel, type2: .Psychic),
             Pokemon(name: "Deoxys", number: 386, image: UIImage(named: "386"), generation: "Gen 3", type: .Psychic, type2: nil),
-            Pokemon(name: "Deoxys (Attack)", number: 386, image: UIImage(named: "386-attack"), generation: "Gen 3", type: .Psychic, type2: nil),
-            Pokemon(name: "Deoxys (Defense)", number: 386, image: UIImage(named: "386-defense"), generation: "Gen 3", type: .Psychic, type2: nil),
-            Pokemon(name: "Deoxys (Speed)", number: 386, image: UIImage(named: "386-speed"), generation: "Gen 3", type: .Psychic, type2: nil),
+//            Pokemon(name: "Deoxys (Attack)", number: 386, image: UIImage(named: "386-attack"), generation: "Gen 3", type: .Psychic, type2: nil),
+//            Pokemon(name: "Deoxys (Defense)", number: 386, image: UIImage(named: "386-defense"), generation: "Gen 3", type: .Psychic, type2: nil),
+//            Pokemon(name: "Deoxys (Speed)", number: 386, image: UIImage(named: "386-speed"), generation: "Gen 3", type: .Psychic, type2: nil),
 
             
             // MARK: Gen 4 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -501,12 +504,12 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Rampardos", number: 409, image: UIImage(named: "409"), generation: "Gen 4", type: .Rock, type2: nil),
             Pokemon(name: "Shieldon", number: 410, image: UIImage(named: "410"), generation: "Gen 4", type: .Rock, type2: .Steel),
             Pokemon(name: "Bastiodon", number: 411, image: UIImage(named: "411"), generation: "Gen 4", type: .Rock, type2: .Steel),
-            Pokemon(name: "Burmy (Plant)", number: 412, image: UIImage(named: "412-plant"), generation: "Gen 4", type: .Bug, type2: nil),
-            Pokemon(name: "Burmy (Sandy)", number: 412, image: UIImage(named: "412-sandy"), generation: "Gen 4", type: .Bug, type2: nil),
-            Pokemon(name: "Burmy (Trash)", number: 412, image: UIImage(named: "412-trash"), generation: "Gen 4", type: .Bug, type2: nil),
-            Pokemon(name: "Wormadam (Plant)", number: 413, image: UIImage(named: "413-plant"), generation: "Gen 4", type: .Bug, type2: .Grass),
-            Pokemon(name: "Wormadam (Sandy)", number: 413, image: UIImage(named: "413-sandy"), generation: "Gen 4", type: .Bug, type2: .Ground),
-            Pokemon(name: "Wormadam (Trash)", number: 413, image: UIImage(named: "413-trash"), generation: "Gen 4", type: .Bug, type2: .Steel),
+            Pokemon(name: "Burmy", number: 412, image: UIImage(named: "412-plant"), generation: "Gen 4", type: .Bug, type2: nil),
+            //Pokemon(name: "Burmy (Sandy)", number: 412, image: UIImage(named: "412-sandy"), generation: "Gen 4", type: .Bug, type2: nil),
+            //Pokemon(name: "Burmy (Trash)", number: 412, image: UIImage(named: "412-trash"), generation: "Gen 4", type: .Bug, type2: nil),
+            Pokemon(name: "Wormadam", number: 413, image: UIImage(named: "413-plant"), generation: "Gen 4", type: .Bug, type2: .Grass),
+            //Pokemon(name: "Wormadam (Sandy)", number: 413, image: UIImage(named: "413-sandy"), generation: "Gen 4", type: .Bug, type2: .Ground),
+            //Pokemon(name: "Wormadam (Trash)", number: 413, image: UIImage(named: "413-trash"), generation: "Gen 4", type: .Bug, type2: .Steel),
             Pokemon(name: "Mothim", number: 414, image: UIImage(named: "414"), generation: "Gen 4", type: .Bug, type2: .Flying),
             Pokemon(name: "Combee", number: 415, image: UIImage(named: "415"), generation: "Gen 4", type: .Bug, type2: .Flying),
             Pokemon(name: "Vespiquen", number: 416, image: UIImage(named: "416"), generation: "Gen 4", type: .Bug, type2: .Flying),
@@ -592,6 +595,7 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Shaymin (Land)", number: 492, image: UIImage(named: "492-land"), generation: "Gen 4", type: .Grass, type2: nil),
             Pokemon(name: "Shaymin (Sky)", number: 492, image: UIImage(named: "492-sky"), generation: "Gen 4", type: .Grass, type2: .Flying),
             Pokemon(name: "Arceus", number: 493, image: UIImage(named: "493"), generation: "Gen 4", type: .Normal, type2: nil),
+            Pokemon(name: "Victini", number: 494, image: UIImage(named: "494"), generation: "Gen 4", type: .Psychic, type2: .Fire),
     
             // MARK: Gen 5 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -765,8 +769,77 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Chespin", number: 650, image: UIImage(named: "650"), generation: "Gen 6", type: .Grass, type2: nil),
             Pokemon(name: "Quilladin", number: 651, image: UIImage(named: "651"), generation: "Gen 6", type: .Grass, type2: nil),
             Pokemon(name: "Chesnaught", number: 652, image: UIImage(named: "652"), generation: "Gen 6", type: .Grass, type2: .Fighting),
-            
-            
+            Pokemon(name: "Fennekin", number: 653, image: UIImage(named: "653"), generation: "Gen 6", type: .Fire, type2: nil),
+            Pokemon(name: "Braixen", number: 654, image: UIImage(named: "654"), generation: "Gen 6", type: .Fire, type2: nil),
+            Pokemon(name: "Delphox", number: 655, image: UIImage(named: "655"), generation: "Gen 6", type: .Fire, type2: .Psychic),
+            Pokemon(name: "Froakie", number: 656, image: UIImage(named: "656"), generation: "Gen 6", type: .Water, type2: nil),
+            Pokemon(name: "Frogadier", number: 657, image: UIImage(named: "657"), generation: "Gen 6", type: .Water, type2: nil),
+            Pokemon(name: "Greninja", number: 658, image: UIImage(named: "658"), generation: "Gen 6", type: .Water, type2: .Dark),
+            Pokemon(name: "Bunnelby", number: 659, image: UIImage(named: "659"), generation: "Gen 6", type: .Normal, type2: nil),
+            Pokemon(name: "Diggersby", number: 660, image: UIImage(named: "660"), generation: "Gen 6", type: .Normal, type2: .Ground),
+            Pokemon(name: "Fletchling", number: 661, image: UIImage(named: "661"), generation: "Gen 6", type: .Normal, type2: .Flying),
+            Pokemon(name: "Fletchinder", number: 662, image: UIImage(named: "662"), generation: "Gen 6", type: .Fire, type2: .Flying),
+            Pokemon(name: "Talonflame", number: 663, image: UIImage(named: "663"), generation: "Gen 6", type: .Fire, type2: .Flying),
+            Pokemon(name: "Scatterbug", number: 664, image: UIImage(named: "664"), generation: "Gen 6", type: .Bug, type2: nil),
+            Pokemon(name: "Spewpa", number: 665, image: UIImage(named: "665"), generation: "Gen 6", type: .Bug, type2: nil),
+            Pokemon(name: "Vivillon", number: 666, image: UIImage(named: "666"), generation: "Gen 6", type: .Bug, type2: .Flying),
+            Pokemon(name: "Litleo", number: 667, image: UIImage(named: "667"), generation: "Gen 6", type: .Fire, type2: .Normal),
+            Pokemon(name: "Pyroar", number: 668, image: UIImage(named: "668"), generation: "Gen 6", type: .Fire, type2: .Normal),
+            Pokemon(name: "Flabébé", number: 669, image: UIImage(named: "669"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Floette", number: 670, image: UIImage(named: "670"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Florges", number: 671, image: UIImage(named: "671"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Skiddo", number: 672, image: UIImage(named: "672"), generation: "Gen 6", type: .Grass, type2: nil),
+            Pokemon(name: "Gogoat", number: 673, image: UIImage(named: "673"), generation: "Gen 6", type: .Grass, type2: nil),
+            Pokemon(name: "Pancham", number: 674, image: UIImage(named: "674"), generation: "Gen 6", type: .Fighting, type2: nil),
+            Pokemon(name: "Pangoro", number: 675, image: UIImage(named: "675"), generation: "Gen 6", type: .Fighting, type2: .Dark),
+            Pokemon(name: "Furfrou", number: 676, image: UIImage(named: "676"), generation: "Gen 6", type: .Normal, type2: nil),
+            Pokemon(name: "Espurr", number: 677, image: UIImage(named: "677"), generation: "Gen 6", type: .Psychic, type2: nil),
+            Pokemon(name: "Meowstic", number: 678, image: UIImage(named: "678"), generation: "Gen 6", type: .Psychic, type2: nil),
+            Pokemon(name: "Honedge", number: 679, image: UIImage(named: "679"), generation: "Gen 6", type: .Steel, type2: .Ghost),
+            Pokemon(name: "Doublade", number: 680, image: UIImage(named: "680"), generation: "Gen 6", type: .Steel, type2: .Ghost),
+            Pokemon(name: "Aegislash", number: 681, image: UIImage(named: "681"), generation: "Gen 6", type: .Steel, type2: .Ghost),
+            Pokemon(name: "Spiritzee", number: 682, image: UIImage(named: "682"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Aromatisse", number: 683, image: UIImage(named: "683"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Swirlix", number: 684, image: UIImage(named: "684"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Slurpuff", number: 685, image: UIImage(named: "685"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Inkay", number: 686, image: UIImage(named: "686"), generation: "Gen 6", type: .Dark, type2: .Psychic),
+            Pokemon(name: "Malamar", number: 687, image: UIImage(named: "687"), generation: "Gen 6", type: .Dark, type2: .Psychic),
+            Pokemon(name: "Binacle", number: 688, image: UIImage(named: "688"), generation: "Gen 6", type: .Rock, type2: .Water),
+            Pokemon(name: "Barbarcle", number: 689, image: UIImage(named: "689"), generation: "Gen 6", type: .Rock, type2: .Water),
+            Pokemon(name: "Skrelp", number: 690, image: UIImage(named: "690"), generation: "Gen 6", type: .Poison, type2: .Water),
+            Pokemon(name: "Dragalge", number: 691, image: UIImage(named: "691"), generation: "Gen 6", type: .Poison, type2: .Dragon),
+            Pokemon(name: "Clauncher", number: 692, image: UIImage(named: "692"), generation: "Gen 6", type: .Water, type2: nil),
+            Pokemon(name: "Clawitzer", number: 693, image: UIImage(named: "693"), generation: "Gen 6", type: .Water, type2: nil),
+            Pokemon(name: "Helioptile", number: 694, image: UIImage(named: "694"), generation: "Gen 6", type: .Electric, type2: .Normal),
+            Pokemon(name: "Heliolisk", number: 695, image: UIImage(named: "695"), generation: "Gen 6", type: .Electric, type2: .Normal),
+            Pokemon(name: "Tyrunt", number: 696, image: UIImage(named: "696"), generation: "Gen 6", type: .Rock, type2: .Dragon),
+            Pokemon(name: "Tyrantrum", number: 697, image: UIImage(named: "697"), generation: "Gen 6", type: .Rock, type2: .Dragon),
+            Pokemon(name: "Amaura", number: 698, image: UIImage(named: "698"), generation: "Gen 6", type: .Rock, type2: .Ice),
+            Pokemon(name: "Aurorus", number: 699, image: UIImage(named: "699"), generation: "Gen 6", type: .Rock, type2: .Ice),
+            Pokemon(name: "Sylveon", number: 700, image: UIImage(named: "700"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Hawlucha", number: 701, image: UIImage(named: "701"), generation: "Gen 6", type: .Fighting, type2: .Flying),
+            Pokemon(name: "Dedenne", number: 702, image: UIImage(named: "702"), generation: "Gen 6", type: .Electric, type2: .Fairy),
+            Pokemon(name: "Carbink", number: 703, image: UIImage(named: "703"), generation: "Gen 6", type: .Rock, type2: .Fairy),
+            Pokemon(name: "Goomy", number: 704, image: UIImage(named: "704"), generation: "Gen 6", type: .Dragon, type2: nil),
+            Pokemon(name: "Sliggoo", number: 705, image: UIImage(named: "705"), generation: "Gen 6", type: .Dragon, type2: nil),
+            Pokemon(name: "Goodra", number: 706, image: UIImage(named: "706"), generation: "Gen 6", type: .Dragon, type2: nil),
+            Pokemon(name: "Klefki", number: 707, image: UIImage(named: "707"), generation: "Gen 6", type: .Steel, type2: .Fairy),
+            Pokemon(name: "Phantump", number: 708, image: UIImage(named: "708"), generation: "Gen 6", type: .Ghost, type2: .Grass),
+            Pokemon(name: "Trevenant", number: 709, image: UIImage(named: "709"), generation: "Gen 6", type: .Ghost, type2: .Grass),
+            Pokemon(name: "Pumpkaboo", number: 710, image: UIImage(named: "710"), generation: "Gen 6", type: .Ghost, type2: .Grass),
+            Pokemon(name: "Gourgeist", number: 711, image: UIImage(named: "711"), generation: "Gen 6", type: .Ghost, type2: .Grass),
+            Pokemon(name: "Bergmite", number: 712, image: UIImage(named: "712"), generation: "Gen 6", type: .Ice, type2: nil),
+            Pokemon(name: "Avalugg", number: 713, image: UIImage(named: "713"), generation: "Gen 6", type: .Ice, type2: nil),
+            Pokemon(name: "Noibat", number: 714, image: UIImage(named: "714"), generation: "Gen 6", type: .Flying, type2: .Dragon),
+            Pokemon(name: "Noivern", number: 715, image: UIImage(named: "715"), generation: "Gen 6", type: .Flying, type2: .Dragon),
+            Pokemon(name: "Xerneas", number: 716, image: UIImage(named: "716"), generation: "Gen 6", type: .Fairy, type2: nil),
+            Pokemon(name: "Yveltal", number: 717, image: UIImage(named: "717"), generation: "Gen 6", type: .Dark, type2: .Flying),
+            Pokemon(name: "Zygarde", number: 718, image: UIImage(named: "718"), generation: "Gen 6", type: .Dragon, type2: .Ground),
+            Pokemon(name: "Diancie", number: 719, image: UIImage(named: "719"), generation: "Gen 6", type: .Rock, type2: .Fairy),
+            Pokemon(name: "Hoopa", number: 720, image: UIImage(named: "720"), generation: "Gen 6", type: .Psychic, type2: .Ghost),
+            Pokemon(name: "Volcanion", number: 721, image: UIImage(named: "721"), generation: "Gen 6", type: .Fire, type2: .Water),
+        
+
             // MARK: Gen 7 ////////////////////////////////////////////////////////////////////////////////////////////////////////
             
             
@@ -789,15 +862,15 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Vikavolt", number: 738, image: UIImage(named: "738"), generation: "Gen 7", type: .Bug, type2: .Electric),
             Pokemon(name: "Crabrawler", number: 739, image: UIImage(named: "739"), generation: "Gen 7", type: .Fighting, type2: nil),
             Pokemon(name: "Crabominable", number: 740, image: UIImage(named: "740"), generation: "Gen 7", type: .Fighting, type2: .Ice),
-            Pokemon(name: "Oricorio (Baile)", number: 741, image: UIImage(named: "741"), generation: "Gen 7", type: .Fire, type2: .Flying),
-            Pokemon(name: "Oricorio (Pom Pom)", number: 741, image: UIImage(named: "741_1"), generation: "Gen 7", type: .Electric, type2: .Flying),
+            Pokemon(name: "Oricorio", number: 741, image: UIImage(named: "741"), generation: "Gen 7", type: .Fire, type2: .Flying),
+            //Pokemon(name: "Oricorio (Pom Pom)", number: 741, image: UIImage(named: "741_1"), generation: "Gen 7", type: .Electric, type2: .Flying),
             Pokemon(name: "Cutiefly", number: 742, image: UIImage(named: "742"), generation: "Gen 7", type: .Bug, type2: .Fairy),
             Pokemon(name: "Ribombee", number: 743, image: UIImage(named: "743"), generation: "Gen 7", type: .Bug, type2: .Fairy),
             Pokemon(name: "Rockruff", number: 744, image: UIImage(named: "744"), generation: "Gen 7", type: .Rock, type2: nil),
             Pokemon(name: "Lycanroc", number: 745, image: UIImage(named: "745"), generation: "Gen 7", type: .Rock, type2: nil),
-            Pokemon(name: "Lycanroc (Midnight)", number: 754, image: UIImage(named: "745_1"), generation: "Gen 7", type: .Rock, type2: nil),
+            //Pokemon(name: "Lycanroc (Midnight)", number: 745, image: UIImage(named: "745_1"), generation: "Gen 7", type: .Rock, type2: nil),
             Pokemon(name: "Wishiwashi", number: 746, image: UIImage(named: "746"), generation: "Gen 7", type: .Water, type2: nil),
-            Pokemon(name: "Wishiwashi (School)", number: 746, image: UIImage(named: "746_1"), generation: "Gen 7", type: .Water, type2: nil),
+            //Pokemon(name: "Wishiwashi (School)", number: 746, image: UIImage(named: "746_1"), generation: "Gen 7", type: .Water, type2: nil),
             Pokemon(name: "Mareanie", number: 747, image: UIImage(named: "747"), generation: "Gen 7", type: .Poison, type2: .Water),
             Pokemon(name: "Toxapex", number: 748, image: UIImage(named: "748"), generation: "Gen 7", type: .Poison, type2: .Water),
             Pokemon(name: "Mudbray", number: 749, image: UIImage(named: "749"), generation: "Gen 7", type: .Ground, type2: nil),
@@ -853,12 +926,12 @@ class PokeTableViewController: UITableViewController {
             Pokemon(name: "Guzzlord", number: 799, image: UIImage(named: "799"), generation: "Gen 7", type: .Dark, type2: .Dragon),
             Pokemon(name: "Necrozma", number: 800, image: UIImage(named: "800"), generation: "Gen 7", type: .Psychic, type2: nil),
             Pokemon(name: "Magearna", number: 801, image: UIImage(named: "801"), generation: "Gen 7", type: .Steel, type2: .Fairy),
-            Pokemon(name: "Marshadow", number: 802, image: UIImage(named: "802"), generation: "Gen 7", type: .Fighting, type2: .Ghost),
-            Pokemon(name: "Poipole", number: 803, image: UIImage(named: "803"), generation: "Gen 7", type: .Poison, type2: nil), //NEEDS Image
-            Pokemon(name: "Naganadel", number: 804, image: UIImage(named: "804"), generation: "Gen 7", type: .Poison, type2: .Dragon), //NEEDS Image
-            Pokemon(name: "Stakataka", number: 805, image: UIImage(named: "805"), generation: "Gen 7", type: .Rock, type2: .Steel), // need image
-            Pokemon(name: "Blacephalon", number: 806, image: UIImage(named: "806"), generation: "Gen 7", type: .Fire, type2: .Ghost), // need image
-            Pokemon(name: "Zeraora", number: 807, image: UIImage(named: "807"), generation: "Gen 7", type: .Electric, type2: nil) // need image
+            Pokemon(name: "Marshadow", number: 802, image: UIImage(named: "802"), generation: "Gen 7", type: .Fighting, type2: .Ghost)
+//            Pokemon(name: "Poipole", number: 803, image: UIImage(named: "803"), generation: "Gen 7", type: .Poison, type2: nil), //NEEDS Image
+//            Pokemon(name: "Naganadel", number: 804, image: UIImage(named: "804"), generation: "Gen 7", type: .Poison, type2: .Dragon), //NEEDS Image
+//            Pokemon(name: "Stakataka", number: 805, image: UIImage(named: "805"), generation: "Gen 7", type: .Rock, type2: .Steel), // need image
+//            Pokemon(name: "Blacephalon", number: 806, image: UIImage(named: "806"), generation: "Gen 7", type: .Fire, type2: .Ghost), // need image
+//            Pokemon(name: "Zeraora", number: 807, image: UIImage(named: "807"), generation: "Gen 7", type: .Electric, type2: nil) // need image
         ]
     }
 
@@ -867,7 +940,7 @@ class PokeTableViewController: UITableViewController {
 //    }
     
     
-    
+   
     
     // MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -894,6 +967,8 @@ class PokeTableViewController: UITableViewController {
         }
         
         cell.textLabel?.text = "\(pokemon.number) - \(pokemon.name)"
+        cell.textLabel?.font = UIFont(name:"Avenir", size:24)
+
         
         if let type2 = pokemon.type2 {
             cell.detailTextLabel?.text = "Type: \(pokemon.type), \(type2)"
@@ -914,27 +989,12 @@ class PokeTableViewController: UITableViewController {
         } else {
             pokemon = pokemons[indexPath.row]
         }
-        //playSound(soundNumber: "\(indexPath.row + 1)")
 
         performSegue(withIdentifier: "toDetailView", sender: pokemon)
         
     }
     
-//    func playSound(soundNumber: String) {
-//
-//        do {
-//            let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "2", ofType: "wav")!)
-//            let audioPlayer = try AVAudioPlayer(contentsOf: url as URL)
-//            audioPlayer.play()
-//
-//        }
-//        catch {
-//            print("fail")
-//        }
-//
-//
-//
-//    }
+
     
     
 //    // MARK: - Segues
